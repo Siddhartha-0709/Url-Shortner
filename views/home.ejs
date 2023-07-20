@@ -1,0 +1,121 @@
+<%- include('header'); -%>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <style>
+    .accordion-item:not(:last-child) {
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .accordion-title {
+      cursor: pointer;
+    }
+
+    .accordion-content {
+      display: none;
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const accordionItems = document.querySelectorAll('.accordion-item');
+
+      accordionItems.forEach((item) => {
+        const title = item.querySelector('.accordion-title');
+
+        title.addEventListener('click', function () {
+          accordionItems.forEach((otherItem) => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+
+  <body style="background-color: #F31559;">
+    <div class="rounded-lg m-3 p-8" style="background-color: #F31559;">
+      <center class="pb-8">
+        <form class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mt-8" action="submit" method="post">
+          <div class="mb-4">
+            <label class="block font-bold mb-2 text-3xl" for="username">
+              Welcome to Shortify | Your WebLink Shortener
+            </label>
+            <h1 class="text-xl">
+              Just Paste Your Link and Click on Get Link !
+            </h1>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="webLink" type="text" placeholder="Enter website URL">
+          </div>
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            Get Link
+          </button>
+        </form>
+      </center>
+    </div>
+    <div class="m-3">
+      <div class="rounded-lg bg-white m-8">
+        <center>
+          <h1 class="text-2xl font-bold pt-4">Frequently Asked Questions</h1>
+        </center>
+        <div>
+          <div class="accordion p-3">
+            <div class="accordion-item">
+              <h2 class="accordion-title text-xl font-bold pt-3">What is an URL Shortener?</h2>
+              <div class="accordion-content">
+                <p class="text-lg">A URL shortener, also known as a link shortener, seems like a simple tool, but it is
+                  a
+                  service that can have a dramatic impact on your marketing efforts.
+                  Link shorteners work by transforming any long URL into a shorter, more readable link. When a user
+                  clicks
+                  the shortened version, they’re automatically forwarded to the destination URL.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-title text-xl font-bold pt-3">Benefits of having a short URL?</h2>
+              <div class="accordion-content">
+                <p class="text-lg">How many people can even remember a long web address, especially if it has tons of
+                  characters and symbols? A short URL can make your link more memorable. Not only does it allow people
+                  to
+                  easily recall and share your link with others, it can also dramatically improve traffic to your
+                  content.
+                  On a more practical side, a short URL is also easier to incorporate into your collateral – whether
+                  you’re looking to engage with your customers offline or online.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-title text-xl font-bold pt-3">What is Link-in-bio?</h2>
+              <div class="accordion-content">
+                <p class="text-lg">The term “Link-in-bio” refers to the clickable URL that you can add to your profile
+                  section for social media. Most social media platforms give you the option to add a link in your bio to
+                  take followers to your website, product page, content or some other important page.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-title text-xl font-bold pt-3"> What is a QR Code?</h2>
+              <div class="accordion-content">
+                <p class="text-lg">Quick response or QR, is a type of barcode that can store a multitude of information. The obvious difference between a QR Code and Barcode is its appearance. A QR Code is always in the shape of a square and contains smaller, even blocks similar to Tetris. A Barcode, on the other hand, has vertical bars in different thicknesses and is often accompanied by a serial number.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-title text-xl font-bold pt-3">What can a QR Code do?</h2>
+              <div class="accordion-content">
+                <p class="text-lg">Because of its versatility, a QR Code can be programmed to do a multitude of things. It can be split into two formats: Dynamic and Static. A Dynamic QR Code is useful for businesses or nonprofits in their marketing strategy because of its advantages. Though it needs a subscription to work, it is a small price to pay compared to the benefits it offers. Dynamic QR Code solutions are editable, which means if you made a mistake and only noticed it after the QR Codes are printed, you can easily log in to the dashboard and fix them without changing the appearance of the already printed Codes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+  </body>
+<%- include('footer'); -%>

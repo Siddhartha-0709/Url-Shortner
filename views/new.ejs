@@ -1,0 +1,30 @@
+<%- include('header'); -%>
+<body style="background-color: #F31559;">
+  <div class="rounded-lg m-3 p-8" style="background-color: #F31559;">
+    <br>
+      <center>
+          <div class="pb-8">
+              <form class=" rounded px-8 pb-8 mb-4 mt-8" action="submit" method="post">
+                <div class="rounded-lg p-8 m-3" style="background-color: antiquewhite;">
+                  <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2 text-2xl " for="username">
+                        Your Shortify URL is Ready
+                    </label>
+                  </div>
+                  <center> 
+                    <div class="bg-white p-3 rounded-lg">
+                        <a class="text-gray-700 text-xl font-bold" href="<%= data.shortLink %>">Your URL : <span class="text-blue-800 ml-3"><%= data.shortLink %></span></a>
+                        <br>
+                        <span class="text-gray-700 text-xl font-bold">Your QR Code is given below :</span>
+                        <br>
+                        <br>
+                        <img class="shadow" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example" alt="">
+                      </div>
+                    </center>
+                </div>
+              </form>
+          </div>
+      </center>
+  </div>
+</body>
+<%- include('footer'); -%>
