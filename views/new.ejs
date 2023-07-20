@@ -13,7 +13,8 @@
             </div>
             <center> 
               <div class="bg-white p-3 rounded-lg">
-                <a class="text-gray-700 text-xl font-bold" href="<%= data.shortLink %>">Your URL: <span class="text-blue-800 ml-3">shrinkit.cyclic.app/<%=data.shortLink%></span></a>
+                <% var link = "https://shrinkit.cyclic.app/"+data.shortLink%>
+                <a class="text-gray-700 text-xl font-bold" href=<%= link %>>Your URL: <span class="text-blue-800 ml-3">shrinkit.cyclic.app/<%=data.shortLink%></span></a>
                 <br>
                 <span class="text-gray-700 text-xl font-bold">Your QR Code is given below:</span>
                 <br>
